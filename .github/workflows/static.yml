@@ -1,20 +1,15 @@
 name: Deploy static content to Pages
 
 on:
-  # Déclenchement à chaque push sur main
   push:
     branches: ["main"]
-
-  # Lancement manuel depuis GitHub Actions
   workflow_dispatch:
 
-# Permissions pour GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Empêche les déploiements concurrents
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -35,10 +30,10 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v1.0.8
         with:
-          path: '.'  # Modifie ce chemin si tes fichiers sont ailleurs (ex: './dist')
+          path: '.'
 
       - name: Upload test reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@3df4bfa15eeb7fc0925f5f9a314f8f752872d3ae  # SHA de v3.1.3
         with:
           name: test-results
           path: ./target/test-results
