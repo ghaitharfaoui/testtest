@@ -1796,6 +1796,12 @@ section,
   overflow: hidden;
 }
 
+.faq .faq-container .faq-item .faq-content ul {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+
 .faq .faq-container .faq-item .faq-toggle {
   position: absolute;
   top: 20px;
